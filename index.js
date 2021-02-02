@@ -58,11 +58,8 @@ const displayTasks = (id) => {
                 break;
 
             case "board__content_deleted":
-                // displayDeletedTasks();
                 array = deletedArray;
                 type = "deleted";
-                debugger;
-                // return;
         }
 
         boardContent.innerHTML = "";
@@ -89,19 +86,6 @@ const displayTasks = (id) => {
 
   taskCardHandler();
 };
-
-// const displayDeletedTasks = () => {
-//   const boardContentDeleted = document.querySelector("#board__content_deleted");
-//   boardContentDeleted.innerHTML = "";
-//   deletedArray.forEach((item) => {
-//     boardContentDeleted.innerHTML += `<div class="task__card" data-type="deleted">
-//         <div class="task__card_content">
-//             <h3 class="task__card_name">${item.name}</h3>
-//             <p class="task__card_description">${item.description}</p>
-//         </div>
-//     </div>`;
-//   });
-// };
 
 const taskCardHandler = () => {
   const taskCard = [...document.querySelectorAll(".task__card")];
