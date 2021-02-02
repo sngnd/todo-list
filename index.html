@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="board__wrapper">
+                <label class="board__header">To do</label>
+                <div class="board__content" id="board__content_task"></div>
+                <button class="task__addBtn" id="addTaskBtn">+ Add task</button>
+                <form class="task__form">
+                    <input type="text" class="task__name" placeholder="Name" />
+                    <textarea type="" class="task__description" placeholder="Description"></textarea>
+                    <button type="submit" class="task__submitBtn">Submit</button>
+                </form>
+            </div>
+            <div class="board__wrapper">
+                <label class="board__header">In process</label>
+                <div class="board__content" id="board__content_process"></div>
+            </div>
+            <div class="board__wrapper">
+                <label class="board__header">Done</label>
+                <div class="board__content" id="board__content_done"></div>
+            </div>
+            <div class="board__wrapper">
+                <label class="board__header">Deleted</label>
+                <div class="board__content" id="board__content_deleted"></div>
+            </div>
+        </div>
+
+        <div class="modal__wrapper">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <button id="closeBtn">X</button>
+                </div>
+                <form class="modal__form">
+                    <div class="modal__info"></div>
+                    <button id="okBtn">OK</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

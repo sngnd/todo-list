@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 90%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.board__wrapper {
+    width: 22%;
+    /* height: 100px; */
+    padding: 1rem;
+    background-color: rgb(224, 224, 224);
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgb(24, 24, 24);
+    display: flex;
+    flex-wrap: wrap;
+    /* display: inline; */
+    flex-direction: column;
+}
+
+.board__wrapper * {
+    font-family: "Montserrat", sans-serif;
+}
+
+.board__header {
+    font-size: 1rem;
+    padding-left: 0.3rem;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.task__addBtn {
+    width: 100%;
+    line-height: 1.7rem;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+    padding-left: 0.3rem;
+    border: none;
+    color: rgb(82, 82, 82);
+    margin-bottom: 0.5rem;
+}
+
+.board__content {
+    min-height: 40px;
+    height: auto;
+}
+
+.task__addBtn:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.task__form {
+    display: none;
+}
+
+.task__name,
+.task__description,
+#edit-description,
+#edit-name {
+    width: 100%;
+    font-size: 0.9rem;
+    padding-left: 0.3rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.4rem;
+    box-shadow: 0 2px 1px -1px gray;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+#edit-description,
+#edit-name {
+    margin-top: 0.3rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.task__description,
+#edit-description {
+    margin-bottom: 0.5rem;
+    resize: none;
+}
+
+.task__submitBtn {
+    background-color: rgb(102, 207, 102);
+    line-height: 2rem;
+    text-align: left;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+#okBtn:hover,
+.task__submitBtn:hover {
+    background-color: rgb(74, 160, 74);
+}
+
+.task__card {
+    width: 100%;
+    font-size: 0.9rem;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 1px -1px gray;
+    margin-bottom: 0.3rem;
+    padding: 0.3rem;
+    position: relative;
+    cursor: move;
+}
+
+.selected {
+    opacity: 0.6;
+}
+
+.task__card:hover {
+    background-color: rgba(255, 255, 255, 0.61);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.task__card:last-child {
+    margin-bottom: 0.5rem;
+}
+
+.task__card_name {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.task__card_content {
+    width: 100%;
+}
+
+.task__card_name,
+.task__card_description {
+    color: black;
+    overflow-wrap: break-word;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.task__buttons {
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+.task__editBtn,
+.task__deleteBtn {
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: rgb(243, 243, 243, 0.7);
+    border-radius: 3px;
+}
+
+.task__editBtn:hover,
+.task__deleteBtn:hover {
+    background-color: rgb(230, 230, 230, 0.9);
+}
+
+.editBtn__icon,
+.deleteBtn__icon {
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* .nottask {
+    height: fit-content;
+} */
+
+.modal__wrapper {
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+    position: absolute;
+    width: 22%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal__info {
+    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+#closeBtn {
+    padding: 0.4rem 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+#closeBtn:hover {
+    background-color: rgba(105, 105, 105, 0.3);
+    color: white;
+}
+
+#okBtn {
+    background-color: rgb(102, 207, 102);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
