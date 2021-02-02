@@ -100,7 +100,6 @@ const displayDeletedTasks = () => {
 const taskCardHandler = () => {
     const taskCard = [...document.querySelectorAll(".task__card")];
     taskCard.forEach((card) => {
-        handleTaskButtons(card);
         addDragAndDrop(card);
     });
 };
@@ -134,12 +133,40 @@ for (const board of boardContent) {
 
         const currentId = board.id;
         const parentId = activeElement.parentElement.id;
+        if (currentId == parentId) return;
 
         const name = activeElement.querySelector(".task__card_name");
         const description = activeElement.querySelector(".task__card_description");
 
         deleteElement(parentId, name, description);
         addElement(currentId, name, description);
+    });
+
+    board.addEventListener("click", (event) => {
+        // if (event.target.closest(".task__card")) {
+        // const card = event.target.offsetParent;
+
+        // const taskButtons = card.querySelectorAll(".task__buttons");
+
+        // card.addEventListener("mouseover", () => {
+        //     taskButtons.forEach((item) => {
+        //         item.style.display = "block";
+        //     });
+        // });
+
+        // card.addEventListener("mouseout", () => {
+        //     taskButtons.forEach((item) => {
+        //         item.style.display = "none";
+        //     });
+        // });
+        let card;
+        if (event.target.closest(".task__editBtn")) {
+            card = event.target.offsetParent.offsetParent;
+            handleEditBtn(card);
+        } else if (event.target.closest(".task__deleteBtn")) {
+            card = event.target.offsetParent.offsetParent;
+            handleDeleteBtn(card);
+        }
     });
 }
 
@@ -220,26 +247,31 @@ const addElement = (currentId, name, description) => {
     displayTasks(currentId);
 };
 
-const handleTaskButtons = (card) => {
-    const taskButtons = card.querySelectorAll(".task__buttons");
+document.querySelectorAll(".task__card").forEach((card) => {});
 
-    card.addEventListener("mouseover", () => {
-        taskButtons.forEach((item) => {
-            item.style.display = "block";
-        });
-    });
+// const handleTaskButtons = (card) => {
+//     const taskButtons = card.querySelectorAll(".task__buttons");
 
-    card.addEventListener("mouseout", () => {
-        taskButtons.forEach((item) => {
-            item.style.display = "none";
-        });
-    });
+//     card.addEventListener("mouseover", () => {
+//         taskButtons.forEach((item) => {
+//             item.style.display = "block";
+//         });
+//     });
 
-    card.addEventListener("click", (event) => {
-        if (event.target.closest(".task__editBtn")) handleEditBtn(card);
-        if (event.target.closest(".task__deleteBtn")) handleDeleteBtn(card);
-    });
-};
+//     card.addEventListener("mouseout", () => {
+//         taskButtons.forEach((item) => {
+//             item.style.display = "none";
+//         });
+//     });
+
+//     card.addEventListener("click", (event) => {
+//         if (event.target.closest(".task__editBtn")) handleEditBtn(card);
+//         if (event.target.closest(".task__deleteBtn")) {
+//             handleDeleteBtn(card);
+//             return;
+//         }
+//     });
+// };
 
 const handleDeleteBtn = (card) => {
     console.log(card);
