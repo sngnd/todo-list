@@ -122,6 +122,10 @@ main {
     cursor: move;
 }
 
+.task__card:last-child {
+    cursor: initial;
+}
+
 .selected {
     opacity: 0.6;
 }
